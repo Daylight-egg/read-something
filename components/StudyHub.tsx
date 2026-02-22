@@ -2621,14 +2621,15 @@ const StudyHub: React.FC<StudyHubProps> = ({
               type="button"
               onClick={handleRefreshQuizOverallComment}
               disabled={isQuizCommentRefreshing || isAiLoading}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-all ${
+              aria-label="刷新总评"
+              title="刷新总评"
+              className={`w-8 h-8 rounded-lg text-xs font-medium flex items-center justify-center transition-all ${
                 isQuizCommentRefreshing || isAiLoading
                   ? `${pressedClass} text-slate-400 cursor-not-allowed`
                   : `${btnClass} text-rose-400 active:scale-95`
               }`}
             >
               {isQuizCommentRefreshing ? <Loader2 size={12} className="animate-spin" /> : <RotateCcw size={12} />}
-              刷新总评
             </button>
           </div>
           {activeQuizSession.overallComment ? (
@@ -2639,7 +2640,7 @@ const StudyHub: React.FC<StudyHubProps> = ({
               {activeQuizSession.overallComment}
             </p>
           ) : (
-            <p className={`text-xs ${subTextClass}`}>暂无总评，点击“刷新总评”重新生成。</p>
+            <p className={`text-xs ${subTextClass}`}>暂无总评，点击右上角刷新按钮重新生成。</p>
           )}
         </div>
 
